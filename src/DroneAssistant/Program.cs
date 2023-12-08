@@ -88,6 +88,9 @@ while (keepRunning)
         case "d2":
             userInput = "send the drone the following actions: takeoff, bounce and land";
             break;
+        case "d3":
+            userInput = "send the drone the following actions: takeoff, flip forward and land";
+            break;
         default:
             break;
     }
