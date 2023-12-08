@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{2B269B40-582A-4953-A963-F3C0004EFBA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKHandleBars", "SKHandleBars\SKHandleBars.csproj", "{D1F40CD1-50C2-409C-9F6A-81FC215817C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelloSharp", "TelloDrone\Tello\TelloSharp.csproj", "{6560F63E-CEE7-4EA4-A2C7-F2AC6E0A29A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DroneAssistant", "DroneAssistant\DroneAssistant.csproj", "{7E2E38ED-223C-4965-895E-B00C1A0EF7E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1F40CD1-50C2-409C-9F6A-81FC215817C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1F40CD1-50C2-409C-9F6A-81FC215817C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1F40CD1-50C2-409C-9F6A-81FC215817C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1F40CD1-50C2-409C-9F6A-81FC215817C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6560F63E-CEE7-4EA4-A2C7-F2AC6E0A29A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6560F63E-CEE7-4EA4-A2C7-F2AC6E0A29A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6560F63E-CEE7-4EA4-A2C7-F2AC6E0A29A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6560F63E-CEE7-4EA4-A2C7-F2AC6E0A29A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E2E38ED-223C-4965-895E-B00C1A0EF7E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E2E38ED-223C-4965-895E-B00C1A0EF7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E2E38ED-223C-4965-895E-B00C1A0EF7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E2E38ED-223C-4965-895E-B00C1A0EF7E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D1F40CD1-50C2-409C-9F6A-81FC215817C6} = {2B269B40-582A-4953-A963-F3C0004EFBA7}
+		{6560F63E-CEE7-4EA4-A2C7-F2AC6E0A29A7} = {2B269B40-582A-4953-A963-F3C0004EFBA7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18A36EB6-78FA-4706-8233-FD0545873FBB}
+	EndGlobalSection
+EndGlobal

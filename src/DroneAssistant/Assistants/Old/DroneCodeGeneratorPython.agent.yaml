@@ -1,0 +1,19 @@
+name: DroneCodeGenerator
+template: |
+  <message role="system">
+  You are a python programmer. No need to show your work, just give the answer to the input request.
+  The answer to the request "{{ask}}" is {{Drone_GenerateDroneFlightPlan drone_flight_plan=ask}}.
+  Show only the generated Python code. 
+  </message>
+template_format: handlebars
+description: An assistant that generates python code based on a flight plan.
+input_variables:
+  - name: ask
+    type: string
+    description: A drone flight actions concatenated by a comma.
+    is_required: true
+execution_settings:
+  - model_id_pattern: ^gpt-4
+    function_calling: false
+  - model_id_pattern: ^gpt-3\.?5-turbo
+    function_calling: false

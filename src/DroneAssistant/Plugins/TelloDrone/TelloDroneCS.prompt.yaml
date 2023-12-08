@@ -1,0 +1,127 @@
+name: GenerateDroneFlightPlan
+template: |
+    <message role="user">{
+    Use this C# code as reference
+
+    [CODE START]
+    // --------------------------
+    // Section usings
+    // --------------------------
+    using TelloSharp;
+
+    // --------------------------
+    // Section connect to drone
+    // --------------------------
+    Tello tello = new();
+    tello.Connect();
+
+    // --------------------------
+    // Section validate connection
+    // --------------------------
+    Console.WriteLine("Start Connection");
+    int i = 0;
+    while (tello._connectionState != Tello.ConnectionState.Connected)
+    {
+        Console.WriteLine("Connecting ... " + i);
+        System.Threading.Thread.Sleep(1000);
+        i++;        
+        if (i == 10)
+            break;
+    }
+
+    // --------------------------
+    // Section display battery level
+    // --------------------------
+    Console.WriteLine("Connected. Battery Level " + tello.State.BatteryPercentage);
+
+    // --------------------------
+    // Section actions
+    // --------------------------
+    // take off the drone
+    tello.TakeOff();
+    Console.WriteLine("Take Off");
+
+    // sleep of 5 seconds
+    System.Threading.Thread.Sleep(5000);
+
+    // tello drone flip right
+    tello.Flip(Messages.FlipType.FlipRight);
+    Console.WriteLine("Flip right");
+
+    // tello drone flip backward
+    tello.Flip(Messages.FlipType.FlipBackward);
+    Console.WriteLine("Flip backward");
+
+    // tello drone flip left
+    tello.Flip(Messages.FlipType.FlipLeft);
+    Console.WriteLine("Flip left");
+
+    // tello drone flip forward
+    tello.Flip(Messages.FlipType.FlipForward);
+    Console.WriteLine("Flip forward");
+
+    // tello drone move up 50 centimeters
+    tello.Up(50);
+    Console.WriteLine("Up 50");
+
+    // tello drone move down 50 centimeters
+    tello.Down(50);
+    Console.WriteLine("Down 50");
+
+    // tello drone move left 50 centimeters
+    tello.Left(50);
+    Console.WriteLine("Left 50");
+
+    // tello drone move right 50 centimeters
+    tello.Right(50);
+    Console.WriteLine("Right 50");
+
+    // tello drone move forward 50 centimeters
+    tello.Forward(50);
+    Console.WriteLine("Forward 50");
+
+    // tello drone move backward 50 centimeters
+    tello.Backward(50);
+    Console.WriteLine("Backward 50");
+
+    // tello drone rotate clockwise 90 degrees
+    tello.ClockWise(90);
+    Console.WriteLine("Clockwise 90");
+
+    // tello drone rotate counter clockwise 90 degrees
+    tello.AntiClockWise(90);
+    Console.WriteLine("Counter Clockwise 90");
+
+    // tello drone bounce
+    tello.Bounce();
+    Console.WriteLine("Bounce");
+
+    // --------------------------
+    // Section land drone
+    // --------------------------
+    // land the drone
+    tello.Land();
+    Console.WriteLine("Land");
+    [CODE END]
+
+    Generate C# code only to follow these commands, add the commands in the actions section.
+    Add a 5 seconds delay between commands.
+    Always include the section usings, connect to drone, validate connection, display battery level, land drone. 
+
+    Commands = {{drone_flight_plan}}
+    }</message>
+template_format: handlebars
+description: A function that generates C# code for a drone to fly a mission
+input_variables:
+  - name: drone_flight_plan
+    type: string
+    description: The drone actions to perform 
+    is_required: true
+  - name: delay
+    type: string
+    description: The amount of time to wait between commands
+    default_value: 3
+    is_required: false
+execution_settings:
+  - model_id_pattern: ^gpt-4
+  - model_id_pattern: ^gpt-3\.?5-turbo
