@@ -25,7 +25,7 @@ template: |
         Console.WriteLine("Connecting ... " + i);
         System.Threading.Thread.Sleep(1000);
         i++;        
-        if (i == 10)
+        if (i == 5)
             break;
     }
 

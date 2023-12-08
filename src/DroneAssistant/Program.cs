@@ -62,6 +62,10 @@ AssistantKernel projectManager = AssistantKernel.FromConfiguration(
 
 IThread thread = await projectManager.CreateThreadAsync();
 bool keepRunning = true;
+Console.WriteLine("Welcome to El Bruno Drone Assistant.");
+Console.WriteLine("Please type your questions, and if you want to fly the DJI Tello drone, type the commands.");
+Console.WriteLine("Type exit to finish the program.");
+Console.WriteLine(" ");
 while (keepRunning)
 {
     // Get user input
@@ -75,14 +79,14 @@ while (keepRunning)
         continue;
     }
 
-    // create a switch statement for userInput.ToLower()
+    // sample user input for demo purposes
     switch (userInput.ToLower())
     {
         case "d1":
             userInput = "send the drone the following actions: takeoff the drone, move forward 25 centimeters and land";
             break;
         case "d2":
-            userInput = "send the drone the following actions: takeoff, move left 20 cms and land";
+            userInput = "send the drone the following actions: takeoff, bounce and land";
             break;
         default:
             break;
