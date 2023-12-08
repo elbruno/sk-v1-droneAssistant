@@ -1,4 +1,4 @@
-# Semantic Kernel V1 Assistant for DJI Tello Drone Control 🚀
+# 🚀 Semantic Kernel V1 Assistant to control DJI Tello Drone 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](/LICENSE)
 [![Twitter: elbruno](https://img.shields.io/twitter/follow/elbruno.svg?style=social)](https://twitter.com/elbruno)
