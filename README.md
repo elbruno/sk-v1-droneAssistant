@@ -31,46 +31,46 @@ The project explores two types of plugins:
 1. **Tello Drone Plugin**: A prompt-based plugin using a template to create drone-compatible C# code.
 
     General content of the template:
-    ```javascript
-            name: GenerateDroneFlightPlan
-            template: |
-                <message role="user">{
-                Use this C# code as reference
+    ```yaml
+    name: GenerateDroneFlightPlan
+    template: |
+        <message role="user">{
+        Use this C# code as reference
 
-                [CODE START]
-                // Section usings
-                using TelloSharp;
+        [CODE START]
+        // Section usings
+        using TelloSharp;
 
-                // Section connect to drone
-                Tello tello = new();
-                tello.Connect();
+        // Section connect to drone
+        Tello tello = new();
+        tello.Connect();
 
-                // Section validate connection
-                Console.WriteLine("Start Connection");
-                
-                // ...
+        // Section validate connection
+        Console.WriteLine("Start Connection");
+        
+        // ...
 
-                // land the drone
-                tello.Land();
-                Console.WriteLine("Land");
-                [CODE END]
+        // land the drone
+        tello.Land();
+        Console.WriteLine("Land");
+        [CODE END]
 
-                Generate C# code only to follow these commands, add the commands in the actions section.
-                Add a 5 seconds delay between commands.
-                Always include the section usings, connect to drone, validate connection, display battery level, land drone. 
+        Generate C# code only to follow these commands, add the commands in the actions section.
+        Add a 5 seconds delay between commands.
+        Always include the section usings, connect to drone, validate connection, display battery level, land drone. 
 
-                Commands = {{drone_flight_plan}}
-                }</message>
-            template_format: handlebars
-            description: A function that generates C# code for a drone to fly a mission
-            input_variables:
-            - name: drone_flight_plan
-                type: string
-                description: The drone actions to perform 
-                is_required: true
-            execution_settings:
-            - model_id_pattern: ^gpt-4
-            - model_id_pattern: ^gpt-3\.?5-turbo
+        Commands = {{drone_flight_plan}}
+        }</message>
+    template_format: handlebars
+    description: A function that generates C# code for a drone to fly a mission
+    input_variables:
+    - name: drone_flight_plan
+        type: string
+        description: The drone actions to perform 
+        is_required: true
+    execution_settings:
+    - model_id_pattern: ^gpt-4
+    - model_id_pattern: ^gpt-3\.?5-turbo
       ```
 
 2. **C# CodeRun Plugin**: This is a C# code-based plugin that employs Roslyn to execute C# code. It uses "Microsoft.CodeAnalysis.CSharp" and "Microsoft.CodeAnalysis.CSharp.Scripting" nuget packages.
