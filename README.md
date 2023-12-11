@@ -121,6 +121,33 @@ Here's the current project structure, including the DronePilot Assistant and the
 
 ![Project Structure](images/30ProjectStructure.png)
 
+## ▶️ Running the Sample
+
+### Prerequisites
+
+- [.NET 8](https://dotnet.microsoft.com/download) is required
+- [C# Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) (optional)
+- [Semantic Kernel Tools](https://marketplace.visualstudio.com/items?itemName=ms-semantic-kernel.semantic-kernel) (optional)
+
+### Configuring the sample
+
+Configure an OpenAI endpoint, and optionally an Azure Search Key for bing search
+
+```bash
+cd ./src/DroneAssistant
+
+dotnet user-secrets set "OpenAI:ApiKey" "... your OpenAI key ..."
+dotnet user-secrets set "Bing:ApiKey" "... your Bing key ..."
+```
+
+### Running the sample
+
+```bash
+cd ./src/DroneAssistant
+
+dotnet run
+```
+
 ## 📝 Sample Generated Code
 Examples of inputs and generated C# code:
 
