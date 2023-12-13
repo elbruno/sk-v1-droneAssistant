@@ -91,6 +91,8 @@ while (keepRunning)
         case "d3":
             userInput = "send the drone the following actions: takeoff, flip forward and land";
             break;
+        case "d4":
+            userInput = "connect to the drone and show the battery state";
         default:
             break;
     }
